@@ -1,0 +1,28 @@
+$contentBackground: #21232e;
+$mainText: #fff;
+$outlinedBg: #3b3f50;
+$outlinedText: #ff4e33;
+$buttonBackground:#e3ac00;
+$buttonColor:#f2f3f7;
+$light:#c0c3ce;
+$white:#fff;
+$gradient:linear-gradient(90deg, #dca108, #97334e);
+
+$bgImage:url(../img/m-h-night.jpg);
+
+$font-stack: (
+        primary: #{'Source Sans Pro', sans-serif},
+        secondary: #{'Hind', sans-serif},
+        other: #{'Fresca', sans-serif}
+);
+
+$font-weights: (
+        hairline: 100,
+        extra-light: 200,
+        light: 300,
+        regular: 400,
+        book: 500,
+        medium: 600,
+        bold: 700,
+        black: 800,
+        heavy: 900 );

@@ -1,0 +1,262 @@
+body {
+  background-color: $contentBackground;
+  margin: 0;
+  z-index: -100;
+  font-family: map-get($font-stack, primary);
+}
+
+@mixin button {
+  background-color: $buttonBackground;
+  border: none;
+  border-radius: 3px;
+  color: $buttonColor;
+  padding: 10px 35px;
+  font-weight: bold;
+}
+
+@mixin link {
+  font-weight: map-get($font-weights, medium);
+  font-family: map-get($font-stack, secondary);
+}
+
+@mixin outlined_text {
+  content: '';
+  background-color: $outlinedText;
+  position: absolute;
+  z-index: -1;
+}
+
+.landing-logo {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0 10px;
+    display: block;
+    font-weight: bold;
+    color: $mainText;
+    font-size: 1.2em;
+    line-height: 1.3;
+    font-family: map-get($font-stack, other);
+
+    span {
+      display: block;
+      font-size: 0.4em;
+      text-align: center;
+    }
+  }
+
+  img {
+    max-width: 36px;
+  }
+}
+
+header {
+  background-image: $bgImage;
+  background-position: center;
+  height: 555px;
+  padding-top: 15px;
+  z-index: -2;
+  border-bottom-right-radius: 36rem 15rem;
+
+  .header-wrap {
+    color: $mainText;
+    margin: 0 auto;
+    width: 1216px;
+
+    .header_heading {
+      font-weight: map-get($font-weights, bold);
+      font-family: map-get($font-stack, primary);
+      font-size: 57px;
+      width: 440px;
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 32px;
+
+      &:before {
+        @include outlined_text;
+        top: 74px;
+        width: 240px;
+        height: 40px;
+        left: 0;
+      }
+    }
+
+    .header_text {
+      font-family: map-get($font-stack, other);
+      white-space: pre-line;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    & div:last-child {
+      margin-top: 55px;
+
+      .header_button {
+        @include button;
+      }
+
+      .login {
+        @include link;
+        color: $white;
+        font-size: 15px;
+        margin-left: 114px;
+      }
+    }
+
+  }
+}
+
+main {
+  margin-top: 30px;
+
+  .section_text {
+    margin: 0 auto;
+    width: 884px;
+    color: $mainText;
+    text-align: center;
+    font-weight: 600;
+    font-size: 33px;
+    z-index: 1;
+    position: relative;
+
+    &:before {
+      @include outlined_text;
+      top: -6px;
+      left: 446px;
+      width: 150px;
+      height: 41px;
+    }
+  }
+
+  .section_card_wrap {
+    margin: 0 auto;
+    width: 884px;
+
+    .section_card {
+      background-color: $outlinedBg;
+      font-weight: 600;
+      font-family: map-get($font-stack, primary);
+      word-spacing: 1px;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      display: flex;
+
+      img.section_card_img {
+        align-self: flex-start;
+        border-radius: 5px;
+        width: 130%;
+      }
+
+      .section_card_right_container {
+        align-self: center;
+        padding: 0 60px;
+        color: $light;
+
+        .section_card_heading {
+          color: $white;
+          text-align: center;
+          font-size: 19px;
+          margin-bottom: 30px;
+        }
+
+        .section_card_text {
+          font-weight: normal;
+          font-family: map-get($font-stack, other);
+          font-size: 0.8em;
+          line-height: 1.6;
+          margin: 30px 0;
+        }
+
+        .section_link {
+          @include link;
+          color: $light;
+          display: block;
+          text-align: center;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+.section_banner {
+  color: $mainText;
+  margin: 0 auto;
+  width: 700px;
+  background: $gradient;
+  border-radius: 5px;
+  padding: 10px 120px;
+  display: flex;
+  position: relative;
+  top: 60px;
+  z-index: 1;
+
+  .section_banner_text_wrap {
+
+    .section_banner_heading {
+      margin: 0.8rem 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      &:before {
+        @include outlined_text;
+        top: 13px;
+        left: 217px;
+        width: 52px;
+        height: 40px;
+      }
+    }
+
+    .section_banner_text {
+      margin: 0.8rem 0;
+      font-size: 0.8rem;
+      color: $light;
+      font-family: map-get($font-stack, other);
+    }
+  }
+
+  .section_banner_button {
+    @include button;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+footer {
+  background-color: $outlinedBg;
+  color: $light;
+  font-family: map-get($font-stack, secondary);
+
+  .footer_logo {
+    @extend .landing-logo;
+
+    p {
+      color: $light;
+    }
+  }
+
+  .footer-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 90px 0 30px;
+    font-family: map-get($font-stack, other);
+
+    .footer_text {
+      font-size: 11px;
+      width: 240px;
+    }
+
+    .footer-cr {
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+

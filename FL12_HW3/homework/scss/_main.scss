@@ -19,11 +19,18 @@ body {
   font-family: map-get($font-stack, secondary);
 }
 
-@mixin outlined_text {
-  content: '';
-  background-color: $outlinedText;
-  position: absolute;
-  z-index: -1;
+@mixin outlined_text($top, $left, $width, $height) {
+  &:before {
+    top: $top;
+    left: $left;
+    width: $width;
+    height: $height;
+
+    content: '';
+    background-color: $outlinedText;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 .landing-logo {
@@ -53,8 +60,10 @@ body {
 
 header {
   background-image: $bgImage;
+  background-repeat: no-repeat;
   background-position: center;
   height: 555px;
+  background-size: cover;
   padding-top: 15px;
   z-index: -2;
   border-bottom-right-radius: 36rem 15rem;
@@ -74,13 +83,7 @@ header {
       z-index: 1;
       margin-bottom: 32px;
 
-      &:before {
-        @include outlined_text;
-        top: 74px;
-        width: 240px;
-        height: 40px;
-        left: 0;
-      }
+      @include outlined_text(74px, 0, 240px, 40px);
     }
 
     .header_text {
@@ -104,7 +107,6 @@ header {
         margin-left: 114px;
       }
     }
-
   }
 }
 
@@ -121,13 +123,7 @@ main {
     z-index: 1;
     position: relative;
 
-    &:before {
-      @include outlined_text;
-      top: -6px;
-      left: 446px;
-      width: 150px;
-      height: 41px;
-    }
+    @include outlined_text(-6px, 446px, 150px, 41px);
   }
 
   .section_card_wrap {
@@ -201,13 +197,7 @@ main {
       font-size: 1.5rem;
       font-weight: bold;
 
-      &:before {
-        @include outlined_text;
-        top: 13px;
-        left: 217px;
-        width: 52px;
-        height: 40px;
-      }
+      @include outlined_text(13px, 217px, 52px, 40px);
     }
 
     .section_banner_text {

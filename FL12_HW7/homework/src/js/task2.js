@@ -13,7 +13,6 @@ while (game) {
     const min = Math.ceil(0);
     const max = Math.floor(maxNum);
     const num = Math.floor(Math.random() * (max - min + 1)) + min;
-    console.log('Random num: ' + num);
 
     for (let i = 3; i > 0 ; i--) {
         if (haveGuessed){

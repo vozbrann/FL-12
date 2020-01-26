@@ -1,0 +1,24 @@
+ul {
+    list-style-type: none;
+    padding-left: 12px;
+}
+
+ul li div:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+ul li i.material-icons{
+    vertical-align: bottom;
+    height: 80%;
+    font-size: 18px;
+    color: #e8bb4d;
+}
+
+ul li i.file{
+    color: #abaaa9;
+}
+
+.hidden {
+    display: none;
+}
